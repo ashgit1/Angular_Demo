@@ -1,0 +1,7 @@
+
+List of all different Modules of Anjular Js:
+
+* https://angular-ui.github.io/
+
+https://github.com/angelozerr/angularjs-eclipse/wiki/Getting-Started
+

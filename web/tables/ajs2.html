@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<body>
+
+<style>
+table, th {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+
+<div ng-app="myApp" ng-controller="customersCtrl"> 
+Search for person: <input type="text" ng-model="search"></br></br>
+
+<table border="1">
+  <th>#</th>
+  <th>Name</th>
+  <th>Country</th>
+  <th>City</th>
+  <tr ng-repeat="x in names | filter:search | orderBy:'Country' ">
+  
+	<td>{{ $index + 1 }}</td>
+	
+    <td ng-if="$odd" style="background-color:#66CCFF">{{ x.Name | uppercase }}</td>
+	<td ng-if="$even">{{ x.Name | uppercase }}</td>
+	
+	<td ng-if="$odd" style="background-color:#FFFFCC">{{ x.Country }}</td>
+	<td ng-if="$even">{{ x.Country }}</td>
+	
+	<td ng-if="$odd" style="background-color:#CC99FF">{{ x.City | lowercase }}</td>
+	<td ng-if="$even">{{ x.City | lowercase }}</td>
+	
+  </tr>
+</table>
+
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+   $http.get("http://www.w3schools.com/angular/customers.php").
+   success(function(response) {$scope.names = response.records;});
+});
+</script>
+
+</body>
+</html>
