@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="js/angular.min.js"></script>
+<body>
+
+<p>Change the value of the input field:</p>
+
+<div ng-app="" ng-init="myCol='lightblue'">
+
+<input style="background-color:{{myCol}}" ng-model="myCol" value="{{myCol}}">
+
+</div>
+
+<!-- <p>AngularJS resolves the expression and returns the result.</p> -->
+
+<p>The background color of the input box will be whatever you write in the input field.</p>
+
+<!-- <a href="http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1605088" class="drag" 
+title="Drag to your running Eclipse workspace to install AngularJS Eclipse">
+<img class="img-responsive" src="https://marketplace.eclipse.org/sites/all/themes/solstice/_themes/solstice_marketplace/public/images/btn-install.png" alt="Drag to your running Eclipse workspace to install AngularJS Eclipse" />
+</a> -->
+
+
+</body>
+</html>
